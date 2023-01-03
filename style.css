@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    padding: 2rem 12px;
+    max-width: 396px;
+    margin: auto;
+    margin-top: 2rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.app h1{
+    font-size: 20px;
+    position: absolute;
+    top: 2.5rem;
+    border-bottom: 1px solid black;
+}
+.quotes{
+    margin: 23px 0;
+}
+.generate--quote{
+    margin: 12px 0;
+}
+.generate--quote button{
+    padding: 5px 4rem;
+    font-weight: bold;
+    background-color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid green;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.twitter--btn a{
+    padding: 5px 6.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: blue;
+    /* border: 1px solid blue; */
+    border-radius: 4px;
+    cursor: pointer;
+}
