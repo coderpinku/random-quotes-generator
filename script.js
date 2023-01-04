@@ -1,9 +1,12 @@
 const newQuoteButton = document.querySelector('#js-new-quote');
+const spinner = document.querySelector('#spinner');
+const endpoint = 'https://api.whatdoestrumpthink.com/api/v1/quotes/random';
+ 
 newQuoteButton.addEventListener('click', getQuote);
     
     async function getQuote() {
-        const endpoint = 'https://api.whatdoestrumpthink.com/api/v1/quotes/random';
-     
+        spinner.classList.remove('hidden');
+        newQuoteButton.disabled = true;
         try {
           const response = await fetch(endpoint)
           if (!response.ok) {
@@ -16,8 +19,13 @@ newQuoteButton.addEventListener('click', getQuote);
         } catch (err) {
           console.log(err)
           alert('Failed to fetch new quote');
+        }finally {
+          
+          newQuoteButton.disabled = false;
+          spinner.classList.add('hidden');
         }
       }getQuote();
+
       function displayQuote(quote) {
         const quoteText = document.querySelector('#js-quote-text');
         quoteText.textContent = quote;
@@ -27,3 +35,4 @@ newQuoteButton.addEventListener('click', getQuote);
       function setTweetButton(quote) {
         twitterButton.setAttribute('href', `https://twitter.com/share?text=${quote} - Donald Trump`);
       }
+      
